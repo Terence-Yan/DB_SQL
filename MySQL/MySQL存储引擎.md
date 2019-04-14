@@ -4,3 +4,15 @@
 以实现最大程度的可定制性。
 
 #### 2.MySQL支持的存储引擎
+MySQL5.0支持的存储引擎包括**MyISAM、InnoDB、BDB、MEMORY、MERGE、EXAMPLE、NDB Cluster、ARCHIVE、CSV、BLACKHOLE、FEDERATED**等，其中InnoDB和
+BDB提供**事务安全表**，其他存储引擎都是**非事务安全表**。
+
+#### 3.MySQL的默认存储引擎
+创建新表时如果不指定存储引擎，那么系统就会使用**默认存储引擎**，MySQL5.5之前的默认存储引擎是MyISAM，5.5之后改为了InnoDB。如果要修改默认的存储引擎，
+可以在参数文件中设置default-table-type。
+
+#### 4.查看当前的默认存储引擎：show variables like 'default_storage_engine';
+
+#### 5.查看当前数据库支持的存储引擎：show engines;
+
+
