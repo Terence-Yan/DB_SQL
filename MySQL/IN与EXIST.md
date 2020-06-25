@@ -20,9 +20,9 @@ MySQL的子查询实现得非常糟糕。最糟糕的一类查询是 WHERE 条�
   select * from table_a where id EXISTS(select id from table_b where column_x = 1 AND table_a.id = table_b.id);
 ```
 通常可以采用以下方法进行优化：
-(1).使用函数 GROUP_CONCAT() 在 IN() 中构造一个由逗号分隔的列表；
-(2).使用 EXISTS() 等效的改写查询来获取更好的效率；
-(3).使用 JOIN 改写查询：
+* (1).使用函数 GROUP_CONCAT() 在 IN() 中构造一个由逗号分隔的列表；
+* (2).使用 EXISTS() 等效的改写查询来获取更好的效率；
+* (3).使用 JOIN 改写查询：
 ```
   select * from table_a 
      inner join table_b  USING(id) 
